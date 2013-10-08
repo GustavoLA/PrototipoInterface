@@ -6,6 +6,7 @@ package br.com.projetoconfeccao.view;
 
 import br.com.projetoconfeccao.controller.PessoaController;
 import br.com.projetoconfeccao.model.Pessoa;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +14,14 @@ import br.com.projetoconfeccao.model.Pessoa;
  */
 public class InserirPessoaGUI extends javax.swing.JFrame {
 
+    private DefaultTableModel modelo;
+
     /**
      * Creates new form InserirPessoaGUI
      */
-    public InserirPessoaGUI() {
+    public InserirPessoaGUI(DefaultTableModel modelo) {
         initComponents();
+        this.modelo = modelo;
     }
 
     /**

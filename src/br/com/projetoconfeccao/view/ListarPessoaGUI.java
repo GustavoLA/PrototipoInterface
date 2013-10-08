@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author gustavo_lourenco
  */
 public class ListarPessoaGUI extends javax.swing.JFrame {
-
+    
     private JTable tabela;
     private DefaultTableModel modelo = new DefaultTableModel();
 
@@ -55,6 +55,11 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
         btEditar.setText("Editar");
 
         btInserir.setText("Inserir");
+        btInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInserirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -99,7 +104,17 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void btInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirActionPerformed
+        
+        InserirPessoaGUI ip =
+                new InserirPessoaGUI(modelo);
+        
+        ip.setLocationRelativeTo(null);
+        ip.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_btInserirActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btInserir;
@@ -117,7 +132,7 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
         modelo.addColumn("Telefone");
         preencherJTable();
     }
-
+    
     private void preencherJTable() {
         PessoaController pc = new PessoaController();
         for (Pessoa p : pc.listAll()) {
