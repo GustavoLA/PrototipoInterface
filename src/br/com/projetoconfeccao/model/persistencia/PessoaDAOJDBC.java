@@ -84,10 +84,11 @@ public class PessoaDAOJDBC implements PessoaDAO {
             JOptionPane.showMessageDialog(null, "Erro ao inserir uma pessoa. " + e.getMessage());
         } finally {
             try {
-                ConnectionFactory.closeConnection(con, pstm, rs);
+                ConnectionFactory.closeConnection(con, pstm);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão. " + e.getMessage());
             }
         }
+        return resposta;
     }
 }

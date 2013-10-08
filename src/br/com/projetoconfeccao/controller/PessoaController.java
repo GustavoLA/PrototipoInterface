@@ -19,4 +19,9 @@ public class PessoaController {
         return dao.listAll();
     }
     
+    public int inserir(Pessoa p){
+        PessoaDAO dao = new PessoaDAOJDBC();
+        return dao.insert(p);
+    }
+    
 }
