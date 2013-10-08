@@ -54,7 +54,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btEndereco = new javax.swing.JButton();
         btPessoa = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painelFundo.setBackground(new java.awt.Color(255, 255, 255));
         painelFundo.setLayout(new java.awt.GridLayout(6, 1));
@@ -213,6 +213,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(btEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
         btPessoa.setText("Pessoa");
+        btPessoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPessoaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btPessoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 120, 40));
 
         painelFundo.add(jPanel1);
@@ -225,41 +230,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void btUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btUsuarioActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JanelaPrincipal().setVisible(true);
-            }
-        });
-    }
+    
+    private void btPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPessoaActionPerformed
+        ListarPessoaGUI lp = new ListarPessoaGUI();
+        lp.setLocationRelativeTo(null);
+        lp.setVisible(true);
+    }//GEN-LAST:event_btPessoaActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton brFornecedor;
     private javax.swing.JButton brFuncionario;

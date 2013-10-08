@@ -13,5 +13,7 @@ import java.util.List;
  */
 public interface PessoaDAO {
 
+    int insert(Pessoa p);
+
     public List<Pessoa> listAll();
 }
