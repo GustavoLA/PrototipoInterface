@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * @author gustavo_lourenco
  */
 public class InserirPessoaGUI extends javax.swing.JFrame {
-    
+
     private DefaultTableModel modelo;
 
     /**
@@ -129,17 +129,16 @@ public class InserirPessoaGUI extends javax.swing.JFrame {
     private void txNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txNomeActionPerformed
-    
+
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         Pessoa p = new Pessoa();
         p.setNome(txNome.getText());
         p.setTelefone(txTelefone.getText());
         PessoaController pc = new PessoaController();
-        pc.inserir(p);
-        modelo.addRow(new Object[]{p.getCodigo(), p.getNome(), p.getTelefone()});
+        modelo.addRow(new Object[]{pc.inserir(p), p.getNome(), p.getTelefone()});
         dispose();
-        
-        
+
+
     }//GEN-LAST:event_btSalvarActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLimpar;
