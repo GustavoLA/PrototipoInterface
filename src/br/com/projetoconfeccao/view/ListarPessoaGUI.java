@@ -4,17 +4,26 @@
  */
 package br.com.projetoconfeccao.view;
 
+import br.com.projetoconfeccao.controller.PessoaController;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author gustavo_lourenco
  */
 public class ListarPessoaGUI extends javax.swing.JFrame {
 
+    private JTable tabela;
+    private DefaultTableModel modelo = new DefaultTableModel();
+
     /**
      * Creates new form ListarPessoaGUI
      */
     public ListarPessoaGUI() {
         initComponents();
+        criaJTable();
+        scroll.setViewportView(tabela);
     }
 
     /**
@@ -29,7 +38,7 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
         painelFundo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txPesquisa = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        scroll = new javax.swing.JScrollPane();
         btRemover = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         btInserir = new javax.swing.JButton();
@@ -53,7 +62,7 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scroll, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(painelFundoLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
@@ -80,7 +89,7 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
                     .addComponent(btEditar)
                     .addComponent(btInserir))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -128,8 +137,22 @@ public class ListarPessoaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btInserir;
     private javax.swing.JButton btRemover;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel painelFundo;
+    private javax.swing.JScrollPane scroll;
     private javax.swing.JTextField txPesquisa;
     // End of variables declaration//GEN-END:variables
+
+    private void criaJTable() {
+        tabela = new JTable(modelo);
+        modelo.addColumn("Id");
+        modelo.addColumn("Nome");
+        modelo.addColumn("Telefone");
+        preencherJTable();
+    }
+
+    private void preencherJTable() {
+        PessoaController pc = new PessoaController();
+        pc.listAll();
+    }   
+    
 }

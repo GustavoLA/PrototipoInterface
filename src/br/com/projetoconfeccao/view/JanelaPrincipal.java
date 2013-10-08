@@ -63,31 +63,36 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelBiotipo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Biotipo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
         painelBiotipo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btUsuario.setToolTipText("Usuário");
         btUsuario.setBorderPainted(false);
         btUsuario.setContentAreaFilled(false);
+        btUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUsuarioActionPerformed(evt);
+            }
+        });
         painelBiotipo.add(btUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
-        btTipoFisico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btTipoFisico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btTipoFisico.setToolTipText("Tipo Físico");
         btTipoFisico.setBorderPainted(false);
         btTipoFisico.setContentAreaFilled(false);
         painelBiotipo.add(btTipoFisico, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 36, -1, -1));
 
-        btMedida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btMedida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btMedida.setToolTipText("Medida");
         btMedida.setBorderPainted(false);
         btMedida.setContentAreaFilled(false);
         painelBiotipo.add(btMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 36, -1, -1));
 
-        btColecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btColecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btColecao.setToolTipText("Coleção");
         btColecao.setBorderPainted(false);
         btColecao.setContentAreaFilled(false);
         painelBiotipo.add(btColecao, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 36, -1, -1));
 
-        btCategoriaColecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btCategoriaColecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btCategoriaColecao.setToolTipText("Categoria Coleção");
         btCategoriaColecao.setBorderPainted(false);
         btCategoriaColecao.setContentAreaFilled(false);
@@ -99,25 +104,25 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelEstoque.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estoque", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         painelEstoque.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btEntrada.setToolTipText("Entrada");
         btEntrada.setBorderPainted(false);
         btEntrada.setContentAreaFilled(false);
         painelEstoque.add(btEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
-        btProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btProduto.setToolTipText("Produto");
         btProduto.setBorderPainted(false);
         btProduto.setContentAreaFilled(false);
         painelEstoque.add(btProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 36, -1, -1));
 
-        btMateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btMateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btMateriaPrima.setToolTipText("Matéria-prima");
         btMateriaPrima.setBorderPainted(false);
         btMateriaPrima.setContentAreaFilled(false);
         painelEstoque.add(btMateriaPrima, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 36, -1, -1));
 
-        btCategoriaMateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btCategoriaMateriaPrima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btCategoriaMateriaPrima.setToolTipText("Categoria Matéria-prima");
         btCategoriaMateriaPrima.setBorderPainted(false);
         btCategoriaMateriaPrima.setContentAreaFilled(false);
@@ -127,10 +132,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         painelFinanceiro.setBackground(new java.awt.Color(255, 255, 255));
         painelFinanceiro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Financeiro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
-        painelFinanceiro.setPreferredSize(null);
         painelFinanceiro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btNotaFiscal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btNotaFiscal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btNotaFiscal.setToolTipText("Nota Fiscal");
         btNotaFiscal.setBorderPainted(false);
         btNotaFiscal.setContentAreaFilled(false);
@@ -142,25 +146,22 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelPcp.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PCP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         painelPcp.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        brFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        brFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         brFornecedor.setToolTipText("Fornecedor");
         brFornecedor.setBorderPainted(false);
         brFornecedor.setContentAreaFilled(false);
-        brFornecedor.setPreferredSize(null);
         painelPcp.add(brFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
-        btTransportadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btTransportadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btTransportadora.setToolTipText("Transportadora");
         btTransportadora.setBorderPainted(false);
         btTransportadora.setContentAreaFilled(false);
-        btTransportadora.setPreferredSize(null);
         painelPcp.add(btTransportadora, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 36, -1, -1));
 
-        btConserto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btConserto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btConserto.setToolTipText("Conserto");
         btConserto.setBorderPainted(false);
         btConserto.setContentAreaFilled(false);
-        btConserto.setPreferredSize(null);
         painelPcp.add(btConserto, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 36, -1, -1));
 
         painelFundo.add(painelPcp);
@@ -169,39 +170,34 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelRh.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RH", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), java.awt.Color.black)); // NOI18N
         painelRh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        brFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        brFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         brFuncionario.setToolTipText("Funcionário");
         brFuncionario.setBorderPainted(false);
         brFuncionario.setContentAreaFilled(false);
-        brFuncionario.setPreferredSize(null);
         painelRh.add(brFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
-        btFerias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btFerias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btFerias.setToolTipText("Férias");
         btFerias.setBorderPainted(false);
         btFerias.setContentAreaFilled(false);
-        btFerias.setPreferredSize(null);
         painelRh.add(btFerias, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 36, -1, -1));
 
-        btCurriculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btCurriculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btCurriculo.setToolTipText("Currículo");
         btCurriculo.setBorderPainted(false);
         btCurriculo.setContentAreaFilled(false);
-        btCurriculo.setPreferredSize(null);
         painelRh.add(btCurriculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 36, -1, -1));
 
-        btVagas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btVagas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btVagas.setToolTipText("Vagas");
         btVagas.setBorderPainted(false);
         btVagas.setContentAreaFilled(false);
-        btVagas.setPreferredSize(null);
         painelRh.add(btVagas, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 36, -1, -1));
 
-        btTreinamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btTreinamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btTreinamento.setToolTipText("Treinamento");
         btTreinamento.setBorderPainted(false);
         btTreinamento.setContentAreaFilled(false);
-        btTreinamento.setPreferredSize(null);
         painelRh.add(btTreinamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 36, -1, -1));
 
         painelFundo.add(painelRh);
@@ -210,15 +206,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Outros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 18), java.awt.Color.black)); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/projetoconfeccao/image/user.png"))); // NOI18N
+        btEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         btEndereco.setToolTipText("Endereço");
         btEndereco.setBorderPainted(false);
         btEndereco.setContentAreaFilled(false);
-        btEndereco.setPreferredSize(null);
         jPanel1.add(btEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 36, -1, -1));
 
         btPessoa.setText("Pessoa");
-        jPanel1.add(btPessoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 120, 40));
+        jPanel1.add(btPessoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 120, 40));
 
         painelFundo.add(jPanel1);
 
@@ -226,6 +221,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
